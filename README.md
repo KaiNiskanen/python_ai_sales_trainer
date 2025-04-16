@@ -1,7 +1,6 @@
 # AI Sales Trainer - MVP
 
-A simple AI-powered sales training application that helps sales professionals improve their skills through sequential reasoning, personalized feedback, and interactive conversation practice.
-
+A simple AI-powered sales training application that helps sales professionals improve their skills through practice scenarios in a chat interface , and then givespersonalized feedback
 ## Overview
 
 The MVP version of AI Sales Trainer demonstrates core functionality of sequential reasoning and conversational AI to help sales professionals practice and improve their skills. This minimal implementation focuses on delivering essential features with an API-first architecture that supports future expansion.
@@ -61,7 +60,6 @@ Technology options:
 - Implement basic conversation endpoint
 
 ### Phase 2: AI Agent Development (2 weeks)
-- Design sequential reasoning process for sales training
 - Implement prompt engineering for sales scenarios
 - Create feedback generation system
 - Test conversation flow and AI responses
@@ -86,47 +84,6 @@ Technology options:
 - System maintains conversation context
 - API response time under 3 seconds
 
-## Setup and Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/ai-sales-trainer.git
-cd ai-sales-trainer
-
-# Set up virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your OpenAI API key and other configuration
-
-# Run the backend server
-uvicorn app.main:app --reload
-```
-
-## Project Structure
-
-```
-ai-sales-trainer/
-├── app/
-│   ├── main.py            # FastAPI application entry point
-│   ├── api/               # API routes
-│   ├── core/              # Core settings and config
-│   ├── agents/            # AI agent implementation
-│   │   └── sales_agent.py # Sequential reasoning sales agent
-│   ├── models/            # Data models and schemas
-│   ├── db/                # Database models
-│   └── services/          # Business logic
-├── frontend/              # Simple frontend implementation
-├── tests/                 # Backend unit tests
-├── .env.example           # Environment variable template
-├── requirements.txt       # Python dependencies
-└── README.md             # This file
-```
 
 ## Technical Architecture
 
@@ -134,7 +91,7 @@ ai-sales-trainer/
 ┌─────────────────┐      ┌───────────────────────┐      ┌─────────────┐
 │                 │      │                       │      │             │
 │  Frontend       │──────▶  FastAPI Backend      │──────▶  OpenAI API │
-│  (Simple UI)    │      │  (Sequential Logic)   │      │  (GPT-4)    │
+│    │      │  (Sequential Logic)   │      │  (GPT-4)    │
 │                 │◀─────│                       │◀─────│             │
 └─────────────────┘      └───────────────────────┘      └─────────────┘
                                     │
@@ -142,17 +99,7 @@ ai-sales-trainer/
                                     ▼
                           ┌─────────────────┐
                           │                 │
-                          │  SQLite         │
-                          │  Database       │
-                          │                 │
+                          │supabase database    │
                           └─────────────────┘
 ```
 
-## Out of Scope for MVP
-
-- Multiple sales scenarios beyond cold calling
-- Advanced analytics and progress tracking
-- Team/manager features
-- Mobile app versions
-- Custom scenario creation
-- Integration with CRM systems 
